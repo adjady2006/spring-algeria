@@ -4,199 +4,408 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Spring Algeria Travel</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f9ff;
-}
+  :root {
+    --blue-deep: #0a2a6e;
+    --blue-mid: #1a4aad;
+    --blue-bright: #1e7ec8;
+    --blue-light: #5ab4e5;
+    --gold: #f0c040;
+    --white: #ffffff;
+  }
 
-/* HEADER */
-header {
-    background: linear-gradient(to right, #0077b6, #0096c7);
-    color: white;
-    padding: 15px 40px;
-}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-.header-container {
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--blue-deep);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #061a55 0%, #0d3080 40%, #1a5099 100%);
+    padding: 30px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .logo-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-
-.logo img {
-    width: 170px;
-}
-
-/* NAVIGATION */
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-    background: white;
-}
-
-.hero h1 {
-    color: #0077b6;
-}
-
-/* SERVICES */
-section {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-h2 {
-    color: #0077b6;
-}
-
-.services {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-    margin-top: 30px;
-}
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+  }
 
-.card {
-    background: white;
-    padding: 25px;
-    width: 280px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+  .logo-container img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(90,180,229,0.5));
+    animation: float 3s ease-in-out infinite;
+  }
 
-/* CONTACT */
-.contact {
-    background-color: #e6f4ff;
-}
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
 
-.contact form {
-    max-width: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+  .brand-text h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.2rem;
+    color: var(--white);
+    text-shadow: 0 0 30px rgba(90,180,229,0.8), 0 2px 4px rgba(0,0,0,0.4);
+    line-height: 1;
+  }
 
-input, textarea {
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
+  .brand-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
 
-button {
-    background-color: #0077b6;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
+  .tagline {
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
 
-button:hover {
-    background-color: #005f8e;
-}
+  /* WAVE DIVIDER */
+  .wave {
+    display: block;
+    width: 100%;
+    margin-top: -2px;
+  }
 
-/* FOOTER */
-footer {
-    background-color: #005f8e;
-    color: white;
+  /* SERVICES SECTION */
+  .services-section {
+    padding: 60px 40px;
+    background: linear-gradient(180deg, #0d3080 0%, #0a2a6e 100%);
+  }
+
+  .section-title {
     text-align: center;
-    padding: 20px;
-}
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
 
-/* RESPONSIVE */
-@media(max-width: 768px){
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-    }
+  .section-subtitle {
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
 
-    nav {
-        margin-top: 10px;
-    }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 
-    .services{
-        flex-direction: column;
-        align-items: center;
-    }
-}
+  .service-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 36px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue-light), var(--gold));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+    border-color: var(--blue-light);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(90,180,229,0.2);
+  }
+
+  .service-card:hover::before { opacity: 1; }
+
+  .service-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(90,180,229,0.4));
+  }
+
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .service-card p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), #e0a800);
+    color: #0a2a6e;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* CONTACT SECTION */
+  .contact-section {
+    background: linear-gradient(135deg, #061a55, #0d3080);
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-section::before {
+    content: '✈';
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.03;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .contact-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 28px;
+    transition: transform 0.3s;
+  }
+
+  .contact-card:hover { transform: translateY(-4px); }
+
+  .contact-card .icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .contact-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .contact-card p, .contact-card a {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    text-decoration: none;
+  }
+
+  .contact-card a:hover { color: var(--blue-light); }
+
+  /* FOOTER */
+  footer {
+    background: #05102e;
+    text-align: center;
+    padding: 24px;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 1px;
+  }
+
+  footer span { color: var(--gold); }
+
+  /* FLOATING PLANES */
+  .plane-1, .plane-2 {
+    position: fixed;
+    font-size: 1.2rem;
+    opacity: 0.12;
+    pointer-events: none;
+    animation: fly 18s linear infinite;
+  }
+
+  .plane-1 { top: 20%; animation-duration: 20s; }
+  .plane-2 { top: 65%; animation-duration: 25s; animation-delay: -10s; }
+
+  @keyframes fly {
+    from { left: -60px; }
+    to { left: 110%; }
+  }
+
+  @media (max-width: 600px) {
+    .brand-text h1 { font-size: 2.2rem; }
+    header { padding: 24px 20px 40px; }
+    .services-section, .contact-section { padding: 40px 20px; }
+  }
 </style>
 </head>
-
 <body>
 
-<header>
-    <div class="header-container">
-        <!-- LOGO A GAUCHE -->
-        <div class="logo">
-            <img src="data:image/jpeg;base64,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" alt="Logo">
-        </div>
+<div class="plane-1">✈</div>
+<div class="plane-2">✈</div>
 
-        <!-- MENU A DROITE -->
-        <nav>
-            <a href="#">Accueil</a>
-            <a href="#">Omra</a>
-            <a href="#">Visas</a>
-            <a href="#">Billetterie</a>
-            <a href="#">Contact</a>
-        </nav>
+<!-- HEADER -->
+<header>
+  <div class="logo-container">
+    <img src="data:image/jpeg;base64,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" alt="Spring Algeria Travel Logo">
+    <div class="brand-text">
+      <h1>Spring Algeria Travel</h1>
+      <p>Votre Agence de Voyage</p>
     </div>
+  </div>
+  <p class="tagline">✈ Voyagez avec confiance &amp; confort ✈</p>
 </header>
 
-<div class="hero">
-    <h1>SPRING ALGERIA TRAVEL</h1>
-    <p>Votre partenaire de confiance pour la Omra, les visas et la billetterie</p>
-</div>
+<svg class="wave" viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path d="M0,20 C360,40 1080,0 1440,20 L1440,40 L0,40 Z" fill="#0d3080"/>
+</svg>
 
-<section>
-    <h2>Nos Services</h2>
-    <div class="services">
-        <div class="card">
-            <h3>🕋 Omra</h3>
-            <p>Organisation complète de la Omra avec hôtel, visa, vol et accompagnement.</p>
-        </div>
-        <div class="card">
-            <h3>🛂 Services Visa</h3>
-            <p>Visa Schengen, Turquie, Dubaï et assistance complète dossier.</p>
-        </div>
-        <div class="card">
-            <h3>✈ Billetterie</h3>
-            <p>Réservation de billets d’avion aux meilleurs prix.</p>
-        </div>
+<!-- SERVICES -->
+<section class="services-section">
+  <h2 class="section-title">Nos Services</h2>
+  <p class="section-subtitle">Tout pour votre voyage</p>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <span class="service-icon">🇪🇺</span>
+      <h3>Visa Schengen</h3>
+      <p>Accompagnement complet pour votre demande de visa Schengen</p>
+      <span class="badge">26 pays</span>
     </div>
+
+    <div class="service-card">
+      <span class="service-icon">🇬🇧</span>
+      <h3>Visa UK</h3>
+      <p>Dossier et suivi pour visa Royaume-Uni</p>
+      <span class="badge">London</span>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🇺🇸</span>
+      <h3>Visa USA</h3>
+      <p>Préparation de dossier visa américain B1/B2 et autres</p>
+      <span class="badge">USA</span>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🇹🇷</span>
+      <h3>Visa Turquie</h3>
+      <p>Demande de visa touristique et e-visa pour la Turquie</p>
+      <span class="badge">İstanbul</span>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">📧</span>
+      <h3>Contactez-nous</h3>
+      <p><a href="mailto:springalgeriatravel@gmail.com" style="color:var(--blue-light);text-decoration:none;word-break:break-all;">springalgeriatravel@gmail.com</a></p>
+      <span class="badge">Email</span>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🕋</span>
+      <h3>Omra</h3>
+      <p>Packages Omra complets — hébergement, transport et encadrement</p>
+      <span class="badge">مكة المكرمة</span>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🏨</span>
+      <h3>Hôtels</h3>
+      <p>Réservations hôtelières dans le monde entier aux meilleurs tarifs</p>
+      <span class="badge">Worldwide</span>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">✈</span>
+      <h3>Billeterie</h3>
+      <p>Billets d'avion pour toutes destinations — aller simple ou aller-retour</p>
+      <span class="badge">All Airlines</span>
+    </div>
+
+  </div>
 </section>
 
-<section class="contact">
-    <h2>Contactez-nous</h2>
-    <section id="contact">
-    <h2>📞 Contact</h2>
-    <p><strong>Téléphone :</strong> 0770 79 17 69</p>
-    <p><strong>Email :</strong> springalgeriatravel@gmail.com</p>
+<!-- CONTACT -->
+<section class="contact-section">
+  <h2 class="section-title">Contactez-nous</h2>
+  <p class="section-subtitle">Nous sommes là pour vous</p>
 
-    <h3>📍 Nos Centres</h3>
-    <p><strong>Centre Bab Ezzouar :</strong><br>
-    حي المصالحة 5 جويلية باب الزوار<br>
-    Bab Ezzouar, Algeria 16042</p>
+  <div class="contact-grid">
 
-    <p><strong>Centre Boumerdes :</strong><br>
-    Boumerdas, Algeria</p>
+    <div class="contact-card">
+      <div class="icon">📧</div>
+      <h4>Email</h4>
+      <a href="mailto:springalgeriatravel@gmail.com">springalgeriatravel@gmail.com</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon">📞</div>
+      <h4>Téléphone</h4>
+      <a href="tel:+213770791769">0770 79 17 69</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon">📍</div>
+      <h4>Agence — Boumerdès</h4>
+      <p>Boumerdas, Algeria</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon">📍</div>
+      <h4>Agence — Bab Ezzouar</h4>
+      <p>حي المصالحة، 5 جويلية<br>باب الزوار، Alger, 16042</p>
+    </div>
+
+  </div>
 </section>
 
-    <p style="margin-top:30px;">
-        📞 Téléphone : 0770 79 17 69 <br>
-        📧 Email : springalgeriatravel@gmail.com
-    </p>
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>Spring Algeria Travel</
