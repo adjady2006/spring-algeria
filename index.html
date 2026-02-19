@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spring Algeria Travel</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f9ff;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(to right, #0077b6, #0096c7);
+    color: white;
+    padding: 15px 40px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 170px;
+}
+
+/* NAVIGATION */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+}
+
+.hero h1 {
+    color: #0077b6;
+}
+
+/* SERVICES */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #0077b6;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* CONTACT */
+.contact {
+    background-color: #e6f4ff;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #0077b6;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f8e;
+}
+
+/* FOOTER */
+footer {
+    background-color: #005f8e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px){
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .services{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+        <!-- LOGO A GAUCHE -->
+        <div class="logo">
+            <img src="data:image/jpeg;base64,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" alt="Logo">
+        </div>
+
+        <!-- MENU A DROITE -->
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Omra</a>
+            <a href="#">Visas</a>
+            <a href="#">Billetterie</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<div class="hero">
+    <h1>SPRING ALGERIA TRAVEL</h1>
+    <p>Votre partenaire de confiance pour la Omra, les visas et la billetterie</p>
+</div>
+
+<section>
+    <h2>Nos Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>🕋 Omra</h3>
+            <p>Organisation complète de la Omra avec hôtel, visa, vol et accompagnement.</p>
+        </div>
+        <div class="card">
+            <h3>🛂 Services Visa</h3>
+            <p>Visa Schengen, Turquie, Dubaï et assistance complète dossier.</p>
+        </div>
+        <div class="card">
+            <h3>✈ Billetterie</h3>
+            <p>Réservation de billets d’avion aux meilleurs prix.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Contactez-nous</h2>
+    <section id="contact">
+    <h2>📞 Contact</h2>
+    <p><strong>Téléphone :</strong> 0770 79 17 69</p>
+    <p><strong>Email :</strong> springalgeriatravel@gmail.com</p>
+
+    <h3>📍 Nos Centres</h3>
+    <p><strong>Centre Bab Ezzouar :</strong><br>
+    حي المصالحة 5 جويلية باب الزوار<br>
+    Bab Ezzouar, Algeria 16042</p>
+
+    <p><strong>Centre Boumerdes :</strong><br>
+    Boumerdas, Algeria</p>
+</section>
+
+    <p style="margin-top:30px;">
+        📞 Téléphone : 0770 79 17 69 <br>
+        📧 Email : springalgeriatravel@gmail.com
+    </p>
